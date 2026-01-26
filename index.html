@@ -30,5 +30,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+  // handle redirect from 404.html
+  const params = new URLSearchParams(window.location.search);
+  const redirect = params.get("redirect");
+  if (redirect) {
+    window.history.replaceState(null, "", redirect);
+  }
+</script>
   </body>
 </html>
