@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages SPA fallback:
+      // Redirect all unknown paths back to index.html while preserving the route.
+      const base = "/Tinkery-Malstudio";
+      const path = window.location.pathname.replace(base, "");
+      const search = window.location.search || "";
+      const hash = window.location.hash || "";
+      window.location.replace(base + "/?redirect=" + encodeURIComponent(path + search + hash));
+    </script>
+  </head>
+  <body></body>
+</html>
