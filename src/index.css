@@ -1,0 +1,67 @@
+@import url(https://fonts.bunny.net/css?family=biz-udpmincho:400|allison:400);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-color: #f1dfd1;
+}
+
+.flex{
+    display: flex;
+}
+
+.m-topL{
+    margin-top: 8rem;
+}
+
+.socialLink{
+  color: inherit;       
+  text-decoration: none; 
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+
+.socialLink:hover{
+  color: #caa7a5;
+  transform: translateY(-2px);
+}
+
+.socialLink:focus-visible{
+  outline: none;
+  color: #caa7a5;
+}
+
+
+.pageContainer {
+  max-width: 1200px;  
+  padding: 0 6%;   
+}
+
+.info a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

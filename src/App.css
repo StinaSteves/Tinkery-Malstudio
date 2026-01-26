@@ -1,0 +1,924 @@
+/* ---------- NAVIGATION ---------- */
+
+/* ===========================
+   NAV DESKTOP
+=========================== */
+
+.Navigation {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.navCenter {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  justify-self: center;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  color: #79643d;
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 8vw;
+  height: auto;
+  display: block;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 16px;
+  justify-self: end;
+  color: #79643d;
+  font-size: 1.5rem;
+}
+
+.socialLink {
+  color: inherit;
+  text-decoration: none;
+}
+.socialLink:hover {
+  opacity: 0.85;
+}
+
+.Navigation a,
+.Navigation a:visited,
+.Navigation a:hover,
+.Navigation a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.Navigation a:hover {
+  opacity: 0.7;
+}
+
+/* ===========================
+   BURGER (default AUS auf Desktop)
+=========================== */
+
+.burgerBtn {
+  display: none;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.burgerIcon {
+  width: 26px;
+  height: 2px;
+  background: #79643d;
+  position: relative;
+  display: block;
+  border-radius: 2px;
+}
+.burgerIcon::before,
+.burgerIcon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 26px;
+  height: 2px;
+  background: #79643d;
+  border-radius: 2px;
+}
+.burgerIcon::before { top: -8px; }
+.burgerIcon::after  { top: 8px; }
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+.mobileMenuOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+  z-index: 50;
+}
+.mobileMenuOverlay.isOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(360px, 92vw);
+  background: rgba(241, 223, 209, 0.96);
+  backdrop-filter: blur(10px);
+  transform: translateX(110%);
+  transition: transform 260ms ease;
+  z-index: 60;
+  padding: 22px;
+  box-shadow: -20px 0 50px rgba(0,0,0,0.15);
+}
+.mobileMenu.isOpen {
+  transform: translateX(0);
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mobileLogo {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #79643d;
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: 26px 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #79643d;
+}
+
+.mobileNavList li {
+  border-bottom: 1px solid rgba(121,100,61,0.25);
+  padding-bottom: 12px;
+}
+
+.mobileSocial {
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+  font-size: 1.6rem;
+  color: #79643d;
+}
+
+/* Link-Styles im Burger-Menü fixen */
+.mobileMenu a,
+.mobileMenu a:visited,
+.mobileMenu a:hover,
+.mobileMenu a:active {
+  color: #79643d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mobileMenu a:focus-visible {
+  outline: 2px solid #79643d;
+  outline-offset: 4px;
+}
+
+/* ===========================
+   HERO (WICHTIG: nur 1x definiert!)
+   -> CLS Fix: stabile Höhe über aspect-ratio + fallback
+=========================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+  background: #f1dfd1; /* falls Bild minimal später kommt */
+}
+
+/* echtes Bild wie background-cover */
+.heroImg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.wave-svg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  pointer-events: none;
+  z-index: 2; /* über dem Bild */
+}
+
+.wave-svg-top { top: 0; }
+.wave-svg-bottom {
+  bottom: 0;
+  transform: scaleY(-1);
+  transform-origin: center;
+}
+
+/* Desktop wirkt schöner eher breit */
+@media (min-width: 900px) {
+  .hero {
+    aspect-ratio: 16 / 7;
+    min-height: 520px;
+  }
+}
+
+.wave-svg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  pointer-events: none;
+}
+
+.wave-svg-top { top: 0; }
+
+.wave-svg-bottom {
+  bottom: 0;
+  transform: scaleY(-1);
+  transform-origin: center;
+}
+
+/* HERO background responsive */
+.heroBg{
+  background-image: url("/img/bemalteTeller-Mobile.webp");
+}
+
+/* Tablet / small desktop */
+@media (min-width: 768px){
+  .heroBg{
+    background-image: url("/img/bemalteTeller-S.webp");
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px){
+  .heroBg{
+    background-image: url("/img/bemalteTeller-L.webp");
+  }
+}
+
+/* ===========================
+   RESPONSIVE: Burger einblenden
+=========================== */
+@media (max-width: 820px) {
+  .burgerBtn { display: flex; }
+  .navSpacer,
+  .navCenter,
+  .socialMedia { display: none; }
+}
+
+
+/*--------------------------------------How To-------------------------*/
+
+
+.title-big {
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  font-weight: 100;
+  line-height: 0.8;
+  text-align: right;    
+}
+
+
+
+.word-middle{
+  display: inline-block;
+  transform: translateX(clamp(-22px, -2.2vw, -50px));
+}
+
+.word-left{
+  display: inline-block;
+  transform: translateX(clamp(-18px, -1.8vw, -40px));
+}
+
+
+.step{
+  text-align: center;
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  font-weight: 100;
+  color:#d4cfbc;
+  font-family: 'Allison', handwriting;
+}
+
+
+.expImg{
+  padding: 80px 5%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px); 
+  align-items: start;
+}
+
+
+.sImg img{
+  width: 100%;
+  height: auto;
+  display: block;         
+}
+
+.go{
+  margin-left: 10%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  color: #79643d;
+ font-size: clamp(2.6rem, 4vw, 4rem);
+  line-height: 0.6;
+
+}
+
+.sImg{
+  position: relative;
+  min-width: 0;
+}
+
+.title.right{
+  position: absolute;
+  left: 0;          
+  top: 90%;        
+  width: 100%;
+  z-index: 10;    
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.howCard{
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  height: clamp(260px, 32vw, 360px);
+}
+
+
+.howCard img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 520ms ease;
+}
+
+.stepTag{
+  position: absolute;
+  right: clamp(10px, 1.6vw, 18px);
+  bottom: clamp(10px, 1.6vw, 16px);
+  z-index: 5;
+  pointer-events: none;
+
+  transform: translateY(0);
+  transition: transform 520ms ease;
+}
+
+.howCard:hover .stepTag{
+  transform: translateY(calc(clamp(90px, 10vw, 130px) * -1));
+}
+
+.stepTag h3{
+  margin: 0;
+  font-family: 'Allison', handwriting;
+  font-weight: 100;
+  color: #79643d;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  font-size: clamp(2.2rem, 5.2vw, 4rem);
+}
+
+.howPanel{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background: rgba(241, 223, 209, 0.75);
+  backdrop-filter: blur(8px);
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  column-gap: clamp(14px, 2vw, 26px);
+
+  padding: clamp(14px, 2vw, 22px);
+
+  transform: translateY(calc(100% - clamp(90px, 10vw, 130px)));
+  transition: transform 520ms ease;
+}
+
+.howCard:hover .howPanel{
+  transform: translateY(0);
+}
+
+.howCard:hover .howPanel p,
+.howCard:hover .howPanel .title-big{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.howPanel p{
+  margin: 0;
+  color: #79643d;
+  line-height: 1.45;
+  max-width: 34ch;
+  font-size: clamp(0.78rem, 1.2vw, 0.98rem);
+  grid-column: 1;
+}
+
+.howPanel p,
+.howPanel .title-big{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+
+.howPanel .title-big{
+  margin: 0;
+  color: #79643d;
+  font-weight: 100;
+  line-height: 0.85;
+  text-align: right;
+  font-size: clamp(2.2rem, 3.8vw, 4rem);
+  grid-column: 2;
+}
+
+
+.howCard img{
+  transition: transform 520ms ease;
+}
+
+.howCard:hover img{
+  transform: scale(1.03);
+}
+
+/*---------------------------------------Booking-------------------------*/
+
+.booking{
+  position: relative;
+  width: 100%;
+}
+
+.bookingBG{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: clamp(1200px, 500vh, 900px);          
+  background-image: url("/img/BG.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+  z-index: 0;
+}
+
+.bookingContent{
+  position: relative;
+  z-index: 1;
+  padding-top: 2%;
+}
+
+/*------------------------------------Events-------------------------*/
+
+.eventsSlider {
+  padding: 80px 5%;
+}
+
+.eventsInner {
+  max-width: 1200px;
+  margin: 0 6%;
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+
+.eventsTitle {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  color: #79643d;
+  margin-bottom: 20px;
+}
+
+.eventsCopy {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 48ch;
+  margin-bottom: 32px;
+    color: #79643d;
+}
+
+.eventsCTA {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid #79643d;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #79643d;
+  font-weight: 600;
+}
+
+.eventsImage {
+  position: relative;
+  overflow: hidden;
+}
+
+.eventsImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.75);
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.navBtn.prev {
+  left: 12px;
+}
+
+.navBtn.next {
+  right: 12px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+/* ✅ Große Touch-Hitbox */
+.dot {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* 🎨 Sichtbarer Punkt (optisch wie vorher!) */
+.dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Aktiver Punkt */
+.dot.active::before {
+  background: rgba(255, 255, 255, 1);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Keyboard-Fokus (A11y ✨) */
+.dot:focus-visible::before {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+
+
+/*-----------------------------------FAQ-------------------------*/
+
+.faqWrap{
+  padding: 80px 5%;
+  color: #79643d;
+}
+
+.faqTitle{
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  margin: 0 0 36px 0;
+  color: #79643d;
+}
+
+.faqList{
+  max-width: none;
+}
+
+.faqItem{
+  border-bottom: 2px solid #79643d3f;
+}
+
+.faqQuestion{
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 26px 0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #79643d;
+  text-align: left;
+}
+
+.faqChevron{
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 220ms ease;
+  opacity: 0.75;
+}
+
+.faqChevron.isOpen{
+  transform: rotate(180deg);
+}
+
+.faqAnswer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 320ms ease;
+}
+
+.faqAnswer.isOpen{
+  max-height: 1200px;
+}
+
+.faqAnswerInner{
+  padding: 0 0 26px 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #79643d;
+}
+
+.faqAnswerInner p{
+  margin: 0 0 14px 0;
+}
+
+.faqQuestion:hover{
+  opacity: 0.92;
+}
+
+
+
+/*---------------------------------------Footer-------------------------*/
+.bgFooter {
+  background-color: #ecd0bb;
+  /* background-color: #d4cfbc; */
+  /* background-color: #caa7a5; */
+    color: #79643d;
+}
+
+
+.footerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 20px;
+}
+
+
+.footerTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 56px;           
+  flex-wrap: wrap;      
+}
+
+
+.shop,
+.contact,
+.info {
+  min-width: 220px;
+}
+
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;             
+}
+
+.logo {
+  width: 120px;          
+  height: auto;
+  display: block;
+}
+
+.shopSM {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  font-size: 2rem;
+  
+}
+
+
+.footerTop h3 {
+  margin: 0 0 10px 0;
+}
+
+.footerTop p {
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+
+.footerBottom {
+  margin-top: 32px;
+  text-align: right;
+}
+
+
+.footerHr {
+  border: none;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+  width: 80vw;          
+  max-width: 100%;
+  margin: 0 0 10px 0;
+}
+
+
+.copyright {
+  
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+
+  
+}
+
+.bgFooter .contact a,
+.bgFooter .info a,
+.bgFooter .shopSM a {
+  color: #79643d !important;
+  text-decoration: none !important;
+}
+
+.bgFooter .contact a:link,
+.bgFooter .info a:link,
+.bgFooter .shopSM a:link,
+.bgFooter .contact a:visited,
+.bgFooter .info a:visited,
+.bgFooter .shopSM a:visited {
+  color: #79643d !important;
+  text-decoration: none !important;
+}
+
+.bgFooter .contact a:hover,
+.bgFooter .info a:hover,
+.bgFooter .shopSM a:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+.bgFooter .contact a:focus-visible,
+.bgFooter .info a:focus-visible,
+.bgFooter .shopSM a:focus-visible {
+  outline: 2px solid #79643d;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/*----------------------------------Impressum & Datenschutz-----------------------*/
+
+.legalPage {
+  padding: 90px 24px 120px; 
+}
+
+.legalWrap {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.legalHeader h1 {
+  margin: 0 0 10px 0;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  letter-spacing: 0.01em;
+}
+
+.legalLead {
+  margin: 0 0 26px 0;
+  opacity: 0.85;
+  font-size: 1.05rem;
+}
+
+.legalCard {
+  background: rgba(255, 255, 255, 0.35); 
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 22px;
+  padding: clamp(18px, 3vw, 34px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.legalCard h2 {
+  margin: 26px 0 10px;
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+}
+
+
+.legalCard h2:first-of-type {
+  margin-top: 0;
+}
+
+.legalCard p {
+  margin: 0 0 10px 0;
+  line-height: 1.65;
+  max-width: 75ch;
+}
+
+.legalDivider {
+  height: 1px;
+  background: rgba(92, 74, 45, 0.25);
+  margin: 22px 0;
+}
+
+.legalBack {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.legalBackBtn {
+  background: transparent;
+  border: 1.5px solid rgba(92, 74, 45, 0.5);
+  color: inherit;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.legalBackBtn:hover {
+  background: rgba(92, 74, 45, 0.08);
+}
+
+.bgFooter a.footerLink,
+.bgFooter a.footerLink:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bgFooter a.footerLink:hover {
+  text-decoration: underline;
+}
+
+/* ===== Legal Pages: Link Styles ===== */
+.legalPage a,
+.legalPage a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.legalPage a:hover,
+.legalPage a:focus-visible {
+  text-decoration: underline;
+}
+
+/* optional: schöner Fokus für Tastatur */
+.legalPage a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
