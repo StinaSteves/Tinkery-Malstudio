@@ -226,30 +226,27 @@ export default function Nav() {
         </nav>
       )}
 
-      {/* HERO */}
 {/* HERO */}
-{/* HERO */}
-{/* HERO */}
-<div className="hero" aria-hidden="true">
-  <img
-    className="heroImg"
-    src="/img/bemalteTeller-Mobile.webp"
-    srcSet="
-      /img/bemalteTeller-Mobile.webp 768w,
-      /img/bemalteTeller-S.webp 1024w,
-      /img/bemalteTeller-L.webp 1440w
-    "
-    sizes="100vw"
-    alt=""
-    fetchPriority="high"
-    decoding="async"
-  />
+<div className="hero heroBg" aria-hidden="true">
+  <picture className="heroMedia">
+    <source
+      media="(min-width: 1200px)"
+      srcSet={`${import.meta.env.BASE_URL}img/bemalteTeller-L.webp`}
+    />
+    <source
+      media="(min-width: 768px)"
+      srcSet={`${import.meta.env.BASE_URL}img/bemalteTeller-S.webp`}
+    />
+    <img
+      className="heroImg"
+      src={`${import.meta.env.BASE_URL}img/bemalteTeller-Mobile.webp`}
+      alt=""
+      fetchPriority="high"
+      decoding="async"
+    />
+  </picture>
 
-  <svg
-    className="wave-svg wave-svg-top"
-    viewBox="0 0 1440 200"
-    preserveAspectRatio="none"
-  >
+  <svg className="wave-svg wave-svg-top" viewBox="0 0 1440 200" preserveAspectRatio="none">
     <defs>
       <filter id="waveShadow" x="-20%" y="-20%" width="140%" height="200%">
         <feDropShadow dx="0" dy="20" stdDeviation="20" floodColor="black" floodOpacity="0.35" />
@@ -262,11 +259,7 @@ export default function Nav() {
     />
   </svg>
 
-  <svg
-    className="wave-svg wave-svg-bottom"
-    viewBox="0 0 1440 200"
-    preserveAspectRatio="none"
-  >
+  <svg className="wave-svg wave-svg-bottom" viewBox="0 0 1440 200" preserveAspectRatio="none">
     <path
       filter="url(#waveShadow)"
       fill="#f1dfd1"

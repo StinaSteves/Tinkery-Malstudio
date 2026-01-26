@@ -203,8 +203,7 @@
 }
 
 /* ===========================
-   HERO (WICHTIG: nur 1x definiert!)
-   -> CLS Fix: stabile Höhe über aspect-ratio + fallback
+   HERO 
 =========================== */
 
 .hero {
@@ -212,27 +211,29 @@
   width: 100%;
   height: 540px;
   overflow: hidden;
-  background: #f1dfd1; /* falls Bild minimal später kommt */
 }
 
-/* echtes Bild wie background-cover */
-.heroImg{
+/* Bild liegt “unter” den Waves */
+.heroMedia {
   position: absolute;
   inset: 0;
+}
+
+.heroImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
 }
 
+/* Waves */
 .wave-svg {
   position: absolute;
   left: 0;
   width: 100%;
   height: 160px;
   pointer-events: none;
-  z-index: 2; /* über dem Bild */
+  z-index: 2;
 }
 
 .wave-svg-top { top: 0; }
@@ -242,7 +243,6 @@
   transform-origin: center;
 }
 
-/* Desktop wirkt schöner eher breit */
 @media (min-width: 900px) {
   .hero {
     aspect-ratio: 16 / 7;
