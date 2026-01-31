@@ -122,9 +122,24 @@
   .howPanel p{
     max-width: 100%;
   }
-  .howPanel .title-big{
-    grid-column: 1;
+  .howPanel .title-big {
     text-align: left;
+
+    /* 🔥 Abstand vom Rand */
+    padding-left: 0;
+    margin-left: 0;
+
+    /* verhindert Rand-Kleben */
+    max-width: 100%;
+
+    line-height: 0.95;
+  }
+
+  /* 🔥 GANZ wichtig: negative Verschiebungen aus */
+  .howPanel .word-left,
+  .howPanel .word-middle,
+  .howPanel .word-right {
+    transform: none;
   }
     .legalPage {
     padding: 80px 16px 100px;
@@ -142,7 +157,7 @@
 
 @media (max-width: 820px){
   .howCard:hover .stepTag{
-    transform: translateY(-96px);
+    transform: translateY(-180px);
   }
 
     .stepTag h3{

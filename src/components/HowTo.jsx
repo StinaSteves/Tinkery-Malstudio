@@ -34,11 +34,6 @@ export default function HowTo() {
             </div>
 
             <div className="howPanel">
-              <p>
-                Wähle dein Lieblingsstück aus über 100 verschiedenen Rohkeramiken – von Tellern,
-                Tassen und Schalen bis hin zu Vasen und Dekoration
-              </p>
-
               <h3 id="how-step-1-title" className="title-big">
                 <span className="word-left">Keramik</span>
                 <br />
@@ -46,6 +41,10 @@ export default function HowTo() {
                 <br />
                 <span className="word-right">Farben</span>
               </h3>
+                    <p>
+                Wähle dein Lieblingsstück aus über 100 verschiedenen Rohkeramiken – von Tellern,
+                Tassen und Schalen bis hin zu Vasen und Dekoration
+              </p>
             </div>
           </article>
         </div>
@@ -60,11 +59,7 @@ export default function HowTo() {
             </div>
 
             <div className="howPanel">
-              <p>
-                Suche dir deine Malutensilien zusammen. Wir halten verschiedene Materialien für dich bereit,
-                z. B. Pinsel in verschiedenen Größen, Siebdruckmotive und Schablonen.
-              </p>
-
+          
               <h3 id="how-step-2-title" className="title-big">
                 <span className="word-left">Schablone</span>
                 <br />
@@ -72,6 +67,11 @@ export default function HowTo() {
                 <br />
                 <span className="word-right">Pinsel</span>
               </h3>
+                  <p>
+                Suche dir deine Malutensilien zusammen. Wir halten verschiedene Materialien für dich bereit,
+                z. B. Pinsel in verschiedenen Größen, Siebdruckmotive und Schablonen.
+              </p>
+
             </div>
           </article>
         </div>
@@ -86,11 +86,7 @@ export default function HowTo() {
             </div>
 
             <div className="howPanel">
-              <p>
-                Wir übernehmen den Rest! Deine Keramik wird von uns glasiert und gebrannt,
-                damit sie haltbar und lebensmittelecht wird.
-              </p>
-
+          
               <h3 id="how-step-3-title" className="title-big">
                 <span className="word-left">Glasieren</span>
                 <br />
@@ -98,6 +94,11 @@ export default function HowTo() {
                 <br />
                 <span className="word-right">Brennen</span>
               </h3>
+                  <p>
+                Wir übernehmen den Rest! Deine Keramik wird von uns glasiert und gebrannt,
+                damit sie haltbar und lebensmittelecht wird.
+              </p>
+
             </div>
           </article>
         </div>

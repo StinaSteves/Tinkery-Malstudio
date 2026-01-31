@@ -12,7 +12,7 @@ const SLIDES = [
       "Verbringt einen kreativen Abend zu zweit und bemalt gemeinsam eure Keramik. Perfekt für Paare, Freund:innen oder einfach Quality Time.",
     image: Valentin,
     cta: "Jetzt buchen",
-    link: "/booking",
+ link: "/#buchung",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const SLIDES = [
       "Ein entspannter Abend nur für euch: Keramik bemalen, gute Gespräche und ein Glas Wein in gemütlicher Atmosphäre.",
     image: LadysNight,
     cta: "Jetzt buchen",
-    link: "/events",
+ link: "/#buchung",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const SLIDES = [
       "Runterkommen nach der Arbeit: Schnapp dir Pinsel und Farben und starte kreativ in den Feierabend.",
     image: Afterwork,
     cta: "Jetzt buchen",
-    link: "/booking",
+ link: "/#buchung",
   },
 ];
 

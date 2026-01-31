@@ -229,17 +229,9 @@ export default function Nav() {
 {/* HERO */}
 <div className="hero heroBg" aria-hidden="true">
   <picture className="heroMedia">
-    <source
-      media="(min-width: 1200px)"
-      srcSet={`${import.meta.env.BASE_URL}img/bemalteTeller-L.webp`}
-    />
-    <source
-      media="(min-width: 768px)"
-      srcSet={`${import.meta.env.BASE_URL}img/bemalteTeller-S.webp`}
-    />
     <img
       className="heroImg"
-      src={`${import.meta.env.BASE_URL}img/bemalteTeller-Mobile.webp`}
+      src={`${import.meta.env.BASE_URL}img/bemalteTeller.webp`}
       alt=""
       fetchPriority="high"
       decoding="async"
