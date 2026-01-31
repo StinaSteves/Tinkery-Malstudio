@@ -1125,3 +1125,19 @@ color: white;
   outline-offset: 4px;
   border-radius: 10px;
 }
+
+
+/*-----------------Fake parallax für iphone------------*/
+
+@supports (background-attachment: fixed) {
+  .heroBg {
+    background-attachment: fixed;
+  }
+}
+
+/* iOS: background-attachment fixed ist buggy -> wir nutzen JS transform */
+@supports (-webkit-touch-callout: none) {
+  .heroImg {
+    transform: translate3d(0, var(--parallaxY, 0px), 0) scale(1.08);
+  }
+}
