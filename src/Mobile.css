@@ -29,6 +29,7 @@
 
   .burgerBtn{
     display: inline-flex; 
+    padding-top: 5%;
   }
 
     .footerTop {

@@ -129,7 +129,7 @@
   right: 0;
   height: 100vh;
   width: min(360px, 92vw);
-  background: rgba(241, 223, 209, 0.96);
+  background: #f1dfd1;
   backdrop-filter: blur(10px);
   transform: translateX(110%);
   transition: transform 260ms ease;
