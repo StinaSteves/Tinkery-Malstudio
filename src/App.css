@@ -1022,3 +1022,106 @@ color: white;
   outline: 2px solid currentColor;
   outline-offset: 3px;
 }
+
+/*------------------------------Popup Fenster---------------------*/
+
+.holidayModalOverlay{
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,0.45) !important;
+  z-index: 999999 !important;
+  pointer-events: auto !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 18px !important;
+}
+
+.holidayModal{
+  position: relative;
+  width: min(640px, 92vw);
+  border-radius: 24px;
+  padding: clamp(18px, 3vw, 28px);
+  pointer-events: auto !important;
+  background: rgba(241, 223, 209, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.55);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.22);
+  color: #79643d;
+}
+
+.holidayClose{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(121,100,61,0.25);
+  background: rgba(255,255,255,0.55);
+  cursor: pointer;
+  color: #79643d;
+  font-size: 18px;
+}
+
+.holidayTitle{
+  margin: 0 0 6px;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  letter-spacing: 0.4px;
+}
+
+.holidayDates{
+  margin: 0 0 14px;
+  opacity: 0.9;
+  font-weight: 700;
+}
+
+.holidayText{
+  margin: 0;
+  line-height: 1.55;
+  opacity: 0.92;
+}
+
+.holidayActions{
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.holidayCta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+
+  background: #79643d;
+  color: #f1dfd1;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.holidayGhost{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+
+  background: transparent;
+  border: 1px solid rgba(121,100,61,0.35);
+  color: #79643d;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.holidayCta:focus-visible,
+.holidayGhost:focus-visible,
+.holidayClose:focus-visible{
+  outline: 2px solid #79643d;
+  outline-offset: 4px;
+  border-radius: 10px;
+}
