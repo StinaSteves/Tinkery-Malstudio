@@ -89,7 +89,7 @@ export default function Nav() {
               <NavLinkToSection id="buchung">Termin Buchen</NavLinkToSection>
             </li>
             <li>
-              <NavLinkToSection id="ueber-uns">Über Uns</NavLinkToSection>
+              <NavLinkToSection id="gutschein">Gutschein</NavLinkToSection>
             </li>
           </ul>
         </nav>

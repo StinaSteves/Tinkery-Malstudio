@@ -1,16 +1,16 @@
 import { useId, useState } from "react";
 
-import Valentin from "../../public/img/valentinstagPainting.webp";
+import Abdruck from "../../public/img/babyFuß.png";
 import LadysNight from "../../public/img/ladysNight.webp";
 import Afterwork from "../../public/img/afterWorkPainting.webp";
 
 const SLIDES = [
   {
     id: 1,
-    title: "Valentinstag Special",
+    title: " Babyfuß- und Handabdrücke auf Keramik",
     text:
-      "Verbringt einen kreativen Abend zu zweit und bemalt gemeinsam eure Keramik. Perfekt für Paare, Freund:innen oder einfach Quality Time.",
-    image: Valentin,
+      "Ein ganz besonderer Moment - für immer festgehalten In diesem liebevoll begleiteten Termin gestalten wir gemeinsam einen Hand- oder Fußabdruck eures Babys auf Keramik",
+    image: Abdruck,
     cta: "Jetzt buchen",
  link: "/#buchung",
   },

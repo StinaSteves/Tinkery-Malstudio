@@ -129,6 +129,32 @@ const FAQS = [
       </>
     ),
   },
+  {
+  q: "Wann kann ich meine fertige Keramik abholen?",
+  a: (
+    <>
+      <p>
+        Deine Keramik ist nach <strong>7 Tagen</strong> abholbereit.
+        Es erfolgt <strong>keine separate Benachrichtigung</strong> per E-Mail oder Telefon.
+      </p>
+      <p>
+        Wir öffnen jeweils zu Beginn unserer Kurszeiten. Bitte komm möglichst
+        <strong> etwa 30 Minuten nach Öffnung</strong>, da wir zuvor noch mit der
+        Einführung für unsere Kursteilnehmerinnen und -Teilnehmer beschäftigt sind.
+      </p>
+    </>
+  ),
+},
+
+{
+  q: "Wie lange habe ich Zeit, meine Keramik abzuholen?",
+  a: (
+    <p>
+      Wir bewahren deine fertig gebrannte Keramik <strong>2 Monate</strong> für dich auf.
+      Bitte hole sie innerhalb dieses Zeitraums ab.
+    </p>
+  ),
+},
 ];
 
 export default function Faq() {

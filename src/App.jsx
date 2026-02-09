@@ -8,10 +8,12 @@ import Booking from "./components/Booking.jsx";
 import Footer from "./components/Footer.jsx";
 import Events from "./components/Events.jsx";
 import FAQ from "./components/FAQ.jsx";
+import Gutschein from "./components/Gutschein.jsx"
 import HolidayPopup from "./components/HolidayPopup.jsx";
 
 import Impressum from "./Pages/Impressum.jsx";
 import Datenschutz from "./Pages/Datenschutz.jsx";
+import AGB from "./Pages/AGB.jsx"
 
 import "./App.css";
 import "./mobile.css";
@@ -34,6 +36,7 @@ function Home() {
       <HowTo />
       <Booking />
       <Events />
+      <Gutschein/>
       <FAQ />
     </>
   );
@@ -50,6 +53,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/agb" element={<AGB />} />
         </Routes>
       </main>
 

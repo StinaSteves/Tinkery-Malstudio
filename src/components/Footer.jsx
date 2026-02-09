@@ -93,6 +93,7 @@ export default function Footer() {
             <nav className="footerLinks" aria-label="Footer Navigation">
               <Link to="/impressum">Impressum</Link>
               <Link to="/datenschutz">Datenschutz</Link>
+              <Link to="/agb">AGB</Link>
               <Link to="/#faq">FAQ</Link>
             </nav>
           </div>
